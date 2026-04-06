@@ -3,27 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>title</title>
+    <title>Página con Imagen y Comunicado</title>
     <style>
         body, html {
             margin: 0;
             padding: 0;
-            height: 100%;
+            min-height: 100vh;
             background-color: white;
             display: flex;
             flex-direction: column;
-            overflow: hidden;
         }
 
-        .header-container, .footer-container {
+        /* Estilos previos del encabezado y contenido */
+        .header-container {
             width: 100%;
-            background-color: inherit;
             display: flex;
-            flex-direction: column;
             justify-content: center;
-            align-items: center;
             padding: 20px 0;
-            flex-shrink: 0;
             text-align: center;
         }
 
@@ -37,79 +33,192 @@
             filter: invert(1);
         }
 
-        /* Estilos para el comunicado en el footer */
-        .comunicado {
-            margin: 0;
-            font-size: 1.5rem; /* Ajustado para que el texto detallado sea legible */
-            font-family: sans-serif;
-            font-weight: bold;
-            color: black;
-            mix-blend-mode: difference;
-            filter: invert(1);
-            line-height: 1.4;
-        }
-
-        .ruta-box {
-            margin-bottom: 15px;
-        }
-
         .image-container {
-            flex-grow: 1;
+            flex: 1 0 auto;
             width: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
             background-color: black;
-            overflow: hidden;
+            padding: 20px 0;
         }
 
         .fullscreen-img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
+            max-width: 90%;
+            height: auto;
+            display: block;
         }
 
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 2.5rem;
-            }
-            .comunicado {
-                font-size: 1rem;
-            }
-            .header-container, .footer-container {
-                padding: 10px 0;
-            }
+        .comunicado-section {
+            width: 100%;
+            background-color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .comunicado-texto {
+            margin: 0;
+            font-size: 1.5rem;
+            font-family: sans-serif;
+            font-weight: bold;
+            line-height: 1.6;
+        }
+
+        /* --- NUEVO DISEÑO DE FOOTER BASADO EN JBL --- */
+        
+        .newsletter-section {
+            background-color: #ff4500; /* Naranja JBL */
+            color: white;
+            padding: 40px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: sans-serif;
+        }
+
+        .newsletter-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            max-width: 50%;
+        }
+
+        .newsletter-input {
+            border: none;
+            border-bottom: 2px solid white;
+            background: transparent;
+            color: white;
+            padding: 10px;
+            width: 300px;
+            outline: none;
+        }
+
+        .main-footer {
+            background-color: black;
+            color: #ccc;
+            padding: 50px 10% 20px 10%;
+            font-family: sans-serif;
+        }
+
+        .footer-columns {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr) auto;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .column h3 {
+            color: white;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .column ul li {
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        .column ul li:hover {
+            color: white;
+        }
+
+        .brand-logo-large {
+            font-size: 8rem;
+            font-weight: 900;
+            color: #ff4500;
+            line-height: 1;
+            margin-left: 20px;
+        }
+
+        .bottom-bar {
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.75rem;
+        }
+
+        .brand-strip {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 768px) {
+            .footer-columns { grid-template-columns: repeat(2, 1fr); }
+            .brand-logo-large { display: none; }
+            .newsletter-section { flex-direction: column; text-align: center; }
+            .newsletter-text { max-width: 100%; margin-bottom: 20px; }
+            h1 { font-size: 2.5rem; }
         }
     </style>
 </head>
 <body>
 
     <header class="header-container">
-        <h1>LEE ATENTAMENTE</h1>
+        <h1>que pensabas ?</h1>
     </header>
 
     <main class="image-container">
-        <img src="foto.png" alt="Descripción de la imagen" class="fullscreen-img">
+        <img src="foto.png" alt="Imagen informativa" class="fullscreen-img">
     </main>
 
-    <footer class="footer-container">
-        <div class="comunicado">
+    <section class="comunicado-section">
+        <div class="comunicado-texto">
             <p>LUNES A VIERNES</p>
+            <p>Ruta D: sube cementerio - NO PASA por Americo</p>
+            <p>Ruta Villa: SI PASAN por Americo</p>
+            <p>ATENCION: 02:00 PM A 05:00 PM</p>
+        </div>
+    </section>
+
+    <div class="newsletter-section">
+        <div class="newsletter-text">pagina de PRUEBAS
+        </div>
+        <input type="text" class="newsletter-input" placeholder="Ingresa tu correo">
+    </div>
+
+    <footer class="main-footer">
+        <div class="footer-columns">
             
-            <div class="ruta-box">
-                Ruta D<br>
-                sube cementerio<br>
-                NO PASA por casa del sr Americo
+            <div class="column">
+                <h3>SOPORTE</h3>
+                <ul>
+                    <li>Estado del Pedido</li>
+                    <li>Libro de Reclamaciones</li>
+                </ul>
             </div>
-
-            <div class="ruta-box">
-                Ruta Villa<br>
-                NO sube cementerio<br>
-                SI PASAN por casa del sr Americo
+            <div class="column">
+                <h3>SOBRE NOSOTROS</h3>
+                <ul>
+                    <li>Política de Privacidad</li>
+                    <li>Términos y Condiciones</li>
+                </ul>
             </div>
+            <div class="column">
+                <h3>SÍGUENOS</h3>
+                <div style="font-size: 1.2rem;">  </div>
+            </div>
+            <div class="brand-logo-large">🕷</div>
+        </div>
 
-            <p>ATENCION SECRETARIA<br>
-            02:00 PM A 05:00 PM</p>
+        <div class="bottom-bar">
+            <div>© 2026 SERIDEM06 Todos los derechos reservados.</div>
+            <div>🇵🇪 Perú</div>
+        </div>
+
+        <div class="brand-strip">
+            
         </div>
     </footer>
 
