@@ -19,12 +19,15 @@
             width: 100%;
             background-color: inherit;
             display: flex;
+            flex-direction: column;
             justify-content: center;
+            align-items: center;
             padding: 20px 0;
             flex-shrink: 0;
+            text-align: center;
         }
 
-        h1, h2 {
+        h1 {
             margin: 0;
             font-size: 5rem;
             font-family: sans-serif;
@@ -32,7 +35,22 @@
             color: black; 
             mix-blend-mode: difference;
             filter: invert(1);
-            text-align: center;
+        }
+
+        /* Estilos para el comunicado en el footer */
+        .comunicado {
+            margin: 0;
+            font-size: 1.5rem; /* Ajustado para que el texto detallado sea legible */
+            font-family: sans-serif;
+            font-weight: bold;
+            color: black;
+            mix-blend-mode: difference;
+            filter: invert(1);
+            line-height: 1.4;
+        }
+
+        .ruta-box {
+            margin-bottom: 15px;
         }
 
         .image-container {
@@ -52,8 +70,11 @@
         }
 
         @media (max-width: 600px) {
-            h1, h2 {
-                font-size: 2rem;
+            h1 {
+                font-size: 2.5rem;
+            }
+            .comunicado {
+                font-size: 1rem;
             }
             .header-container, .footer-container {
                 padding: 10px 0;
@@ -64,7 +85,7 @@
 <body>
 
     <header class="header-container">
-        <h1>USA UNIFORME</h1>
+        <h1>que pensabas ?</h1>
     </header>
 
     <main class="image-container">
@@ -72,7 +93,24 @@
     </main>
 
     <footer class="footer-container">
-        <h2>NO PELEAR CON PASAJEROS</h2>
+        <div class="comunicado">
+            <p>LUNES A VIERNES</p>
+            
+            <div class="ruta-box">
+                Ruta D<br>
+                sube cementerio<br>
+                NO PASA por casa del sr Americo
+            </div>
+
+            <div class="ruta-box">
+                Ruta Villa<br>
+                NO sube cementerio<br>
+                SI PASAN por casa del sr Americo
+            </div>
+
+            <p>ATENCION SECRETARIA<br>
+            02:00 PM A 05:00 PM</p>
+        </div>
     </footer>
 
 </body>
