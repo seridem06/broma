@@ -2,12 +2,78 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página con Imagen</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .header-container, .footer-container {
+            width: 100%;
+            background-color: inherit;
+            display: flex;
+            justify-content: center;
+            padding: 20px 0;
+            flex-shrink: 0;
+        }
+
+        h1, h2 {
+            margin: 0;
+            font-size: 5rem;
+            font-family: sans-serif;
+            text-transform: uppercase;
+            color: black; 
+            mix-blend-mode: difference;
+            filter: invert(1);
+            text-align: center;
+        }
+
+        .image-container {
+            flex-grow: 1;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            overflow: hidden;
+        }
+
+        .fullscreen-img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        @media (max-width: 600px) {
+            h1, h2 {
+                font-size: 2rem;
+            }
+            .header-container, .footer-container {
+                padding: 10px 0;
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <h1>que pensabas ?</h1>
-    <img src="foto.png" alt="Descripción de la imagen" width="600">
+    <header class="header-container">
+        <h1>USA UNIFORME ?</h1>
+    </header>
+
+    <main class="image-container">
+        <img src="foto.png" alt="Descripción de la imagen" class="fullscreen-img">
+    </main>
+
+    <footer class="footer-container">
+        <h2>SAPO</h2>
+    </footer>
 
 </body>
 </html>
