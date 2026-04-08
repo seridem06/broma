@@ -1,0 +1,11 @@
+<section class="comunicado-section">
+        <div class="comunicado-texto">
+            <p>MARCA EL PORGONGO</p>
+            
+            <p><strong>MAS CHELAS</strong> REUNIONES TODAS LAS NOCHES</p>
+            
+            
+            <p>SECRETARÍA - COBROS</p>
+            <p>ATENCION: 02:00 PM A 05:00 PM</p>
+        </div>
+    </section>

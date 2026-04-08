@@ -161,12 +161,62 @@
             .newsletter-text { max-width: 100%; margin-bottom: 20px; }
             h1 { font-size: 2.5rem; }
         }
+
+        .comunicado-section {
+        width: 100%;
+        background-color: #f9f9f9; /* Un gris muy tenue para diferenciarlo */
+        padding: 60px 0; /* Más espacio arriba y abajo */
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    .comunicado-texto {
+        max-width: 600px; /* Evita que el texto se estire a los costados */
+        width: 90%; /* Responsivo para móviles */
+        margin: 0 auto;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.8;
+    }
+
+    .comunicado-texto p {
+        margin: 10px 0;
+        color: #333;
+        font-size: 1.2rem;
+        font-weight: 500;
+    }
+
+    /* Estilo específico para el título del horario */
+    .comunicado-texto p:first-child {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #000;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 25px;
+        border-bottom: 3px solid #ff4500; /* Línea naranja estilo JBL */
+        display: inline-block;
+        padding-bottom: 5px;
+    }
+
+    /* Estilo para la sección de Secretaría */
+    .comunicado-texto p:nth-last-child(2) {
+        margin-top: 30px;
+        font-size: 1.4rem;
+        color: #ff4500;
+        text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+        .comunicado-texto p { font-size: 1.5rem; }
+        .comunicado-texto p:first-child { font-size: 1.5rem; }
+    }
     </style>
 </head>
 <body>
 
     <header class="header-container">
-        <h1>que pensabas ?</h1>
+        <h1>MARCA EL PORONGO</h1>
     </header>
 
     <main class="image-container">
@@ -175,15 +225,18 @@
 
     <section class="comunicado-section">
         <div class="comunicado-texto">
-            <p>LUNES A VIERNES</p>
-            <p>Ruta D: sube cementerio - NO PASA por Americo</p>
-            <p>Ruta Villa: SI PASAN por Americo</p>
+            <p>MARCA EL PORGONGO</p>
+            
+            <p><strong>MAS CHELAS</strong> REUNIONES TODAS LAS NOCHES</p>
+            
+            
+            <p>POR UN BUEN SEGURO EN AA</p>
             <p>ATENCION: 02:00 PM A 05:00 PM</p>
         </div>
     </section>
 
     <div class="newsletter-section">
-        <div class="newsletter-text">pagina de PRUEBAS
+        <div class="newsletter-text">este anuncio no ha sido pagado 
         </div>
         <input type="text" class="newsletter-input" placeholder="Ingresa tu correo">
     </div>
