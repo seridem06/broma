@@ -40,6 +40,7 @@
             align-items: center;
             background-color: black;
             padding: 20px 0;
+            position: relative;
         }
 
         .fullscreen-img {
@@ -47,7 +48,34 @@
             max-height: 80vh;
             height: auto;
             display: block;
+            cursor: pointer;
         }
+
+        /* SOLO ESTO SE AGREGÓ */
+        #mensaje-emergente {
+            visibility: hidden;
+            opacity: 0;
+            position: absolute;
+            background-color: rgba(212, 175, 55, 0.95);
+            color: black;
+            padding: 20px 40px;
+            border-radius: 5px;
+            font-size: 2rem;
+            font-weight: 900;
+            text-align: center;
+            text-transform: uppercase;
+            z-index: 100;
+            transition: opacity 0.4s ease, visibility 0.4s;
+            pointer-events: none;
+            width: 80%;
+            max-width: 600px;
+        }
+
+        #mensaje-emergente.show {
+            visibility: visible;
+            opacity: 1;
+        }
+        /* FIN DE LO AGREGADO */
 
         .comunicado-section {
             width: 100%;
@@ -80,7 +108,7 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             margin-bottom: 25px;
-            border-bottom: 3px solid #d4af37; /* Dorado basado en el logo */
+            border-bottom: 3px solid #d4af37;
             display: inline-block;
             padding-bottom: 5px;
         }
@@ -93,7 +121,7 @@
         }
 
         .newsletter-section {
-            background-color: #d4af37; /* Dorado JBL/Logo */
+            background-color: #d4af37;
             color: white;
             padding: 40px 10%;
             display: flex;
@@ -193,7 +221,9 @@
     </header>
 
     <main class="image-container">
-        <img src="logo.png" alt="Los Chicos Fieles Logo" class="fullscreen-img">
+        <img src="logo.png" alt="Los Chicos Fieles Logo" class="fullscreen-img" id="img-trigger">
+        <!-- SOLO ESTO SE AGREGÓ -->
+        <div id="mensaje-emergente">nunca cambies eres un ejemplo a seguir</div>
     </main>
 
     <section class="comunicado-section">
@@ -201,8 +231,8 @@
             <p>Comunicado Oficial</p>
             <p>Bienvenidos a la plataforma oficial de <strong>Los Chicos Fieles</strong>.</p>
             <p>Estamos trabajando para brindarte la mejor experiencia digital.</p>
-            <p>SECRETARÍA - INFORMES</p>
-            <p>ATENCIÓN: 02:00 PM A 05:00 PM</p>
+            <p>INFORMES</p>
+            <p>ATENCIÓN: 11:00 PM A 04:00 PM</p>
         </div>
     </section>
 
@@ -230,7 +260,7 @@
             </div>
             <div class="column">
                 <h3>SÍGUENOS</h3>
-                <div style="font-size: 1.5rem; letter-spacing: 15px;">  </div>
+                <div style="font-size: 1.5rem; letter-spacing: 15px;">  </div>
             </div>
             <div class="column">
                 <h3>CONTACTO</h3>
@@ -247,6 +277,25 @@
             <div>🇵🇪 Perú</div>
         </div>
     </footer>
+
+    <!-- SOLO ESTO SE AGREGÓ -->
+    <script>
+        const img = document.getElementById('img-trigger');
+        const msg = document.getElementById('mensaje-emergente');
+        let timeout;
+
+        img.addEventListener('click', () => {
+            clearTimeout(timeout);
+            msg.classList.remove('show');
+
+            setTimeout(() => {
+                msg.classList.add('show');
+                timeout = setTimeout(() => {
+                    msg.classList.remove('show');
+                }, 3000);
+            }, 50);
+        });
+    </script>
 
 </body>
 </html>
